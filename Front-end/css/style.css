@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    font-family: 'comic sans ms';
+    box-sizing: border-box;
+}
+
+:root{
+
+}
+
+html, body{
+    overscroll-behavior: none; 
+}
+
+body{
+}
+
+nav{
+
+}
+
+header{
+}
+
+main{
+
+}
+
+footer{
+
+}
+
+/* sections */
+section{
+
+}
+
+/* divs */
+div{
+
+}
+
+/* text elements */
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3rem;
+
+}
+
+h3{
+    font-size: 2rem;
+
+}
+
+p{
+    font-size: 1rem;
+
+    overflow-wrap: break-word; 
+    word-break: break-word;
+    max-width: 100%; 
+}
+
+/* links */
+a{
+
+}
+
+a:hover{
+
+}
+
+#nav-div-1{
+
+}
+
+#nav-div-2{
+
+}
+
+/* center containers */
+.center-container{
+    width: 100%;
+    max-width: 60vw;
+    margin: 0 auto;
+}
+
+/* phones and tablets */
+@media(max-width: 480px){
+}
