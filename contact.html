@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+      <a href="index.html"><img src="images/logo.png" alt="Logo" /></a>
+      <div id="nav-links">
+        <a href="bedrijf.html">Bedrijf</a>
+        <a href="product.html">Product</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <header>
+      <h1>Contact</h1>
+    </header>
+
+    <main>
+      <p>Neem contact met ons op via deze formulier:</p>
+      <br>
+      <section id="contact-form-section">
+        <form id="contact-form">
+        <div class="contact-fields">
+          <div class="contact-field">
+            <label for="voornaam">Voornaam</label>
+            <input id="voornaam" name="voornaam" type="text" placeholder="Voornaam" required>
+          </div>
+          <div class="contact-field">
+            <label for="achternaam">Achternaam</label>
+            <input id="achternaam" name="achternaam" type="text" placeholder="Achternaam" required>
+          </div>
+          <div class="contact-field contact-field-full">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Email" required>
+          </div>
+          <div class="contact-field">
+            <label for="woonplaats">Woonplaats</label>
+            <input id="woonplaats" name="woonplaats" type="text" placeholder="Woonplaats">
+          </div>
+          <div class="contact-field">
+            <label for="geboortedatum">Geboortedatum</label>
+            <input id="geboortedatum" name="geboortedatum" type="date">
+          </div>
+          <div class="contact-field contact-field-full">
+            <label for="onderwerp">Onderwerp</label>
+            <select id="onderwerp" name="onderwerp" required>
+              <option value="">Kies onderwerp van het bericht...</option>
+              <option value="vraag">Vraag</option>
+              <option value="feedback">Feedback</option>
+              <option value="anders">Anders</option>
+            </select>
+          </div>
+          <div class="contact-field contact-field-full">
+            <label for="bericht">Bericht</label>
+            <textarea id="bericht" name="bericht" rows="5" required></textarea>
+          </div>
+        </div>
+        <fieldset class="contact-newsletter">
+          <legend>Inschrijven voor nieuwsbrief?</legend>
+          <label><input type="radio" name="nieuwsbrief" value="ja"> Ja</label>
+          <label><input type="radio" name="nieuwsbrief" value="nee"> Nee</label>
+        </fieldset>
+        <label class="contact-terms">
+          <input type="checkbox" name="voorwaarden" required>
+          Ik ga akkoord met de algemene voorwaarden
+        </label>
+        <button type="submit">Verzenden</button>
+      </form>
+    </section>
+
+    </main>
+    <footer>
+      <div id="footer-trademark">
+        <a href="index.html"><img src="images/logo.png" alt="Logo" /></a>
+        <p>© 2026 Lageschool Rotterdam™</p>
+      </div>
+      <div id="footer-links">
+        <a href="">Privacy Policy</a>
+        <a href="">Terms and Conditions</a>
+        <a href="">Cookie Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+</body>
+</html>
