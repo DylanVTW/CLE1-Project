@@ -5,7 +5,15 @@
 }
 
 :root{
+    --text-color-1: #000000;
+    --color-1: #f5fcff;
+    --color-2: #dbf3fa;
+    --color-3: #b7e9f6;
+    --color-4: #92dff3;
+    --color-5: #7ad7f0;
 
+    --default-padding: 1rem;
+    --default-gap: 1rem;
 }
 
 html, body{
@@ -16,10 +24,21 @@ body{
 }
 
 nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+    background-color: var(--color-5);
+        padding: 1rem 5rem 1rem 5rem;
+
+    position: sticky;
+    top:0;
+    z-index: 100;
 }
 
 header{
+    background-color: var(--color-3);
+    padding: var(--default-padding);
 }
 
 main{
@@ -27,7 +46,12 @@ main{
 }
 
 footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+    background-color: var(--color-5);
+    padding: 1rem 5rem 1rem 5rem;
 }
 
 /* sections */
@@ -35,9 +59,61 @@ section{
 
 }
 
+#section-bedrijf{
+    background-color: var(--color-2);
+    padding: var(--default-padding);
+}
+
+#section-product{
+    background-color: var(--color-3);
+    padding: var(--default-padding);
+}
+
 /* divs */
 div{
 
+}
+
+#nav-links{
+    display: flex;
+    gap: var(--default-gap);
+}
+
+#bedrijf-info{
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-gap);
+}
+
+#bedrijf-foto{
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#product-info{
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-gap);
+}
+
+#product-foto{
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer-links{
+    display: flex;
+    gap: var(--default-gap);
 }
 
 /* text elements */
@@ -65,19 +141,25 @@ p{
 
 /* links */
 a{
-
+    color: var(--text-color-1);
+    text-decoration: none;
+    transition: 0.25s ;
 }
 
 a:hover{
-
+    color: var(--color-1);
+    transform: scale(1.1);
 }
 
-#nav-div-1{
-
+/* images */
+img{
+    max-width: 100%;
+    height: auto;
 }
 
-#nav-div-2{
-
+a img{
+    width: 50px;
+    height: auto;
 }
 
 /* center containers */
@@ -85,6 +167,29 @@ a:hover{
     width: 100%;
     max-width: 60vw;
     margin: 0 auto;
+}
+
+#header-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--default-gap);
+}
+
+#bedrijf-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--default-gap);
+}
+
+#product-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: var(--default-gap);
 }
 
 /* phones and tablets */
