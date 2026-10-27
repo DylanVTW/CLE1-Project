@@ -5,7 +5,15 @@
 }
 
 :root{
+    --text-color-1: #000000;
+    --color-1: #f5fcff;
+    --color-2: #dbf3fa;
+    --color-3: #b7e9f6;
+    --color-4: #92dff3;
+    --color-5: #7ad7f0;
 
+    --default-padding: 1rem;
+    --default-gap: 1rem;
 }
 
 html, body{
@@ -16,18 +24,39 @@ body{
 }
 
 nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+    background-color: var(--color-5);
+        padding: 1rem 5rem 1rem 5rem;
+
+    position: sticky;
+    top:0;
+    z-index: 100;
 }
 
 header{
+    background-color: var(--color-3);
+    padding: var(--default-padding);
+    text-align: center;
 }
 
 main{
+    background-color: var(--color-2);
+}
 
+main p{
+    text-align: center;
 }
 
 footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+    background-color: var(--color-5);
+    padding: 1rem 5rem 1rem 5rem;
 }
 
 /* sections */
@@ -35,9 +64,61 @@ section{
 
 }
 
+#section-bedrijf{
+    background-color: var(--color-2);
+    padding: var(--default-padding);
+}
+
+#section-product{
+    background-color: var(--color-3);
+    padding: var(--default-padding);
+}
+
 /* divs */
 div{
 
+}
+
+#nav-links{
+    display: flex;
+    gap: var(--default-gap);
+}
+
+#bedrijf-info{
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-gap);
+}
+
+#bedrijf-foto{
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#product-info{
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-gap);
+}
+
+#product-foto{
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer-links{
+    display: flex;
+    gap: var(--default-gap);
 }
 
 /* text elements */
@@ -65,19 +146,25 @@ p{
 
 /* links */
 a{
-
+    color: var(--text-color-1);
+    text-decoration: none;
+    transition: 0.25s ;
 }
 
 a:hover{
-
+    color: var(--color-1);
+    transform: scale(1.1);
 }
 
-#nav-div-1{
-
+/* images */
+img{
+    max-width: 100%;
+    height: auto;
 }
 
-#nav-div-2{
-
+a img{
+    width: 50px;
+    height: auto;
 }
 
 /* center containers */
@@ -87,6 +174,110 @@ a:hover{
     margin: 0 auto;
 }
 
-/* phones and tablets */
-@media(max-width: 480px){
+#header-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--default-gap);
+}
+
+#bedrijf-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--default-gap);
+}
+
+#product-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: var(--default-gap);
+}
+
+/* contact form */
+#contact-form-section{
+    padding: 0 1.3rem 1rem;
+}
+
+#contact-form{
+    color: #2f3a4f;
+    font-family: 'comic sans ms';
+}
+
+.contact-fields{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem 0.65rem;
+}
+
+.contact-field{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contact-field-full{
+    grid-column: 1 / -1;
+}
+
+#contact-form label,
+#contact-form legend{
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+#contact-form input:not([type="radio"]):not([type="checkbox"]),
+#contact-form select,
+#contact-form textarea{
+    width: 100%;
+    border: 1px solid #c5cfdf;
+    border-radius: 0.2rem;
+    background-color: var(--color-1);
+    color: #2f3a4f;
+    font: 0.75rem 'comic sans ms';
+    padding: 0.35rem 0.55rem;
+}
+
+#contact-form input:not([type="radio"]):not([type="checkbox"]),
+#contact-form select{
+    height: 1.55rem;
+}
+
+#contact-form textarea{
+    min-height: 4.4rem;
+    resize: vertical;
+}
+
+.contact-newsletter{
+    border: 0;
+    display: flex;
+    gap: 1rem;
+    margin: 0.7rem 0 0.8rem;
+    padding: 0;
+}
+
+.contact-newsletter label,
+.contact-terms{
+    align-items: center;
+    display: flex;
+    font-weight: 400 !important;
+    gap: 0.35rem;
+}
+
+.contact-terms{
+    margin-bottom: 1rem;
+}
+
+#contact-form button{
+    background-color: #2f3a4f;
+    border: 0;
+    border-radius: 0.2rem;
+    color: #fff;
+    cursor: pointer;
+    font: 600 0.75rem 'comic sans ms';
+    height: 1.8rem;
+    width: 100%;
 }
