@@ -74,6 +74,16 @@ section{
     padding: var(--default-padding);
 }
 
+#product-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 60vw;
+    margin: 0 auto;
+    padding: var(--default-padding);
+}
+
 /* divs */
 div{
 
@@ -114,6 +124,12 @@ div{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#product-image{
+    width: 526px;
+    max-width: 100%;
+    gap: var(--default-gap);
 }
 
 #footer-links{
@@ -272,7 +288,7 @@ a img{
 }
 
 #contact-form button{
-    background-color: #2f3a4f;
+    background-color: var(--color-5);
     border: 0;
     border-radius: 0.2rem;
     color: #fff;
