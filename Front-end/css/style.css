@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    font-family: 'comic sans ms';
+    font-family: 'Comic Sans MS', 'Comic Neue', 'Chalkboard SE', cursive, sans-serif;
     box-sizing: border-box;
 }
 
@@ -12,15 +12,20 @@
     --color-4: #92dff3;
     --color-5: #7ad7f0;
 
+    --small-padding: 0.5rem;
     --default-padding: 1rem;
+
     --default-gap: 1rem;
+    --medium-gap: 2rem;
 }
 
 html, body{
-    overscroll-behavior: none; 
+    overscroll-behavior: none;
 }
 
 body{
+    color: var(--text-color-1);
+    line-height: 1.6;
 }
 
 nav{
@@ -29,10 +34,10 @@ nav{
     justify-content: space-between;
 
     background-color: var(--color-5);
-        padding: 1rem 5rem 1rem 5rem;
+    padding: 1rem 5rem 1rem 5rem;
 
     position: sticky;
-    top:0;
+    top: 0;
     z-index: 100;
 }
 
@@ -52,16 +57,78 @@ main p{
 
 footer{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
 
     background-color: var(--color-5);
     padding: 1rem 5rem 1rem 5rem;
 }
 
-/* sections */
-section{
+/* tags */
+hr{
+    width: 100%;
+    border: none;
+    border-top: 2px solid var(--color-5);
+    padding-bottom: var(--default-padding);
+}
 
+/* sections */
+#section-company{
+    background-color: var(--color-2);
+    padding: var(--default-padding);
+}
+
+#section-product{
+    background-color: var(--color-3);
+    padding: var(--default-padding);
+}
+
+#section-about-us{
+    background-color: var(--color-2);
+    padding: var(--default-padding);
+}
+
+#section-team{
+    background-color: var(--color-3);
+    padding: var(--default-padding);
+}
+
+/* classes */
+.team-members{
+    width: 100%;
+}
+
+.team-member{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.team-member.even{
+    flex-direction: row;
+}
+
+.team-member.odd{
+    flex-direction: row-reverse;
+}
+
+.team-member-info{
+    flex: 1;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.team-member-profile{
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #section-bedrijf{
@@ -125,8 +192,61 @@ section{
 }
 
 /* divs */
-div{
+#nav-links{
+    display: flex;
+    gap: var(--default-gap);
+}
 
+#company-info{
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--default-gap);
+}
+
+#company-photo{
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#product-info{
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--default-gap);
+}
+
+#product-photo{
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-us-text{
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-gap);
+}
+
+#team-intro{
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-gap);
+    width: 100%;
+}
+
+#footer-links{
+    display: flex;
+    gap: var(--default-gap);
 }
 
 #nav-links{
@@ -178,33 +298,53 @@ div{
 }
 
 /* text elements */
+h1, h2, h3{
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
 h1{
-    font-size: 4rem;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
 }
 
 h2{
-    font-size: 3rem;
-
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
 }
 
 h3{
-    font-size: 2rem;
-
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 p{
-    font-size: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    max-width: 65ch;
 
-    overflow-wrap: break-word; 
+    overflow-wrap: break-word;
     word-break: break-word;
-    max-width: 100%; 
+}
+
+.intro{
+    font-size: 1.25rem;
+    text-align: center;
+    text-wrap: balance;
+}
+
+#header-container h1{
+    text-align: center;
+}
+
+.role{
+    background-color: var(--color-5);
+    padding:var(--small-padding);
+    border-radius: 999px;
 }
 
 /* links */
 a{
     color: var(--text-color-1);
     text-decoration: none;
-    transition: 0.25s ;
+    transition: 0.25s;
 }
 
 a:hover{
@@ -212,14 +352,42 @@ a:hover{
     transform: scale(1.1);
 }
 
+.button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+
+    background-color: var(--color-4);
+    padding: var(--default-padding);
+    border-radius: 0.5rem;
+}
+
+.button:hover{
+    background-color: var(--color-5);
+    color: var(--color-1);
+}
+
 /* images */
 img{
     max-width: 100%;
     height: auto;
+    border: solid var(--color-5) 0.25rem;
+    border-color: var(--color-5);
+    transition: 0.25s;
+}
+
+img:hover{
+    transform: scale(1.05);
 }
 
 a img{
     width: 50px;
+    height: auto;
+}
+
+.team-member-photo{
+    width: 200px;
     height: auto;
 }
 
@@ -238,11 +406,12 @@ a img{
     gap: var(--default-gap);
 }
 
-#bedrijf-container{
+#company-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--default-gap);
+    gap: var(--medium-gap);
+    padding: var(--default-padding);
 }
 
 #product-container{
@@ -336,4 +505,22 @@ a img{
     font: 600 0.75rem 'comic sans ms';
     height: 1.8rem;
     width: 100%;
+}
+    gap: var(--medium-gap);
+    padding: var(--default-padding);
+}
+
+#about-us-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--default-gap);
+}
+
+#team-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--default-gap);
 }
