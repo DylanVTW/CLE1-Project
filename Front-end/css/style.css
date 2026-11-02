@@ -497,24 +497,28 @@ textarea {
         flex-direction: column;
     }
 
-    footer{
+    footer {
         flex-direction: column;
         gap: var(--default-gap);
         justify-content: center;
         align-items: center;
     }
 
-    #footer-trademark{
+    #footer-trademark {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
     }
-    
+
     #footer-links {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .team-member {
+        gap: var(--default-gap);
     }
 
     #company-container {
@@ -527,17 +531,6 @@ textarea {
 
     .form-duo {
         flex-direction: column;
-    }
-
-    #section-about-us {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    #section-about-us a {
-        align-self: center;
     }
 
     #components-list {
