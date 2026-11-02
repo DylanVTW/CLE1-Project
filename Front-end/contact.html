@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lageschool Rotterdam</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+  </head>
+
+  <body>
+    <nav>
+      <a href="index.html"
+        ><img src="images/logo.png" alt="Lageschool Logo"
+      /></a>
+      <div id="nav-links">
+        <a href="bedrijf.html">Bedrijf</a>
+        <a href="product.html">Product</a>
+        <a href="contact.html" class="current-page">Contact</a>
+      </div>
+    </nav>
+
+    <header>
+      <div class="center-container" id="header-container">
+        <h1>Contact</h1>
+        <p class="intro">
+          Heb je een vraag of feedback over de aanwezigheidsscanner? Stuur ons
+          een bericht en we nemen contact met je op.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section id="section-contact">
+        <div class="center-container">
+          <form id="contact-form">
+            <div class="form-duo">
+              <div class="form-duo-field">
+                <label for="first-name">Voornaam</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first-name"
+                  placeholder="Voornaam"
+                  required
+                />
+              </div>
+              <div class="form-duo-field">
+                <label for="last-name">Achternaam</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  name="last-name"
+                  placeholder="Achternaam"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-single">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="E-mail"
+                required
+              />
+            </div>
+
+            <div class="form-duo">
+              <div class="form-duo-field">
+                <label for="city">Woonplaats</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  placeholder="Woonplaats"
+                />
+              </div>
+              <div class="form-duo-field">
+                <label for="birth-date">Geboortedatum</label>
+                <input type="date" id="birth-date" name="birth-date" />
+              </div>
+            </div>
+
+            <div class="form-single">
+              <label for="subject">Onderwerp</label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>
+                  Kies een onderwerp...
+                </option>
+                <option value="question">Vraag</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Anders</option>
+              </select>
+            </div>
+
+            <div class="form-single">
+              <label for="message">Bericht</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Typ hier je bericht..."
+                required
+              ></textarea>
+            </div>
+
+            <fieldset id="form-radio">
+              <legend>Inschrijven voor de nieuwsbrief?</legend>
+              <div id="form-radio-inputs">
+                <div>
+                  <input
+                    type="radio"
+                    id="newsletter-yes"
+                    name="newsletter"
+                    value="yes"
+                  />
+                  <label for="newsletter-yes">Ja</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="newsletter-no"
+                    name="newsletter"
+                    value="no"
+                  />
+                  <label for="newsletter-no">Nee</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <div id="form-checkbox">
+              <input type="checkbox" id="terms" name="terms" required />
+              <label for="terms"
+                >Ik ga akkoord met de algemene voorwaarden</label
+              >
+            </div>
+
+            <button class="button" type="submit">Verzenden</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div id="footer-trademark">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Lageschool Logo" />
+        </a>
+        <p>© 2026 Lageschool Rotterdam™</p>
+      </div>
+      <div id="footer-links">
+        <a href="">Privacy Policy</a>
+        <a href="">Terms and Conditions</a>
+        <a href="">Cookie Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+  </body>
+</html>
