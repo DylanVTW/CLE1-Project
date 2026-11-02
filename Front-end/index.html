@@ -1,31 +1,95 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Lageschool Rotterdam</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
   </head>
 
   <body>
     <nav>
-      <a href="">Link</a>
+      <a href="index.html"
+        ><img src="images/logo.png" alt="Lageschool Logo"
+      /></a>
+      <div id="nav-links">
+        <a href="bedrijf.html">Bedrijf</a>
+        <a href="product.html">Product</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </nav>
 
     <header>
-      <h1>Title</h1>
+      <div class="center-container" id="header-container">
+        <h1>Aanwezigheid registreren in een scan</h1>
+        <p class="intro">
+          Wij bouwen een scanner waarmee leerlingen zich aanmelden met een kaart
+          of badge. Zo houdt de docent meer tijd over voor de les.
+        </p>
+      </div>
     </header>
 
     <main>
-      <section>
-        <div>
-          <h2>Title</h2>
-          <p>Text</p>
-          <img src="images/" alt="" />
+      <section id="section-company">
+        <div class="center-container" id="company-container">
+          <div id="company-info">
+            <h2>Wie zijn wij?</h2>
+            <p>
+              Wij zijn een projectgroep uit Rotterdam. Samen ontwerpen en bouwen
+              we een scanner voor op school. Drie van ons zijn developer, en
+              onze Scrum Master houdt de planning in de gaten.
+            </p>
+            <p>
+              We kijken niet alleen naar de techniek. Een scanner is pas goed
+              als leerlingen meteen snappen wat ze moeten doen.
+            </p>
+            <a class="button" href="bedrijf.html">Maak kennis met het team</a>
+          </div>
+
+          <div id="company-photo">
+            <img src="images/groepFoto.png" alt="Groep Foto" />
+          </div>
+        </div>
+      </section>
+
+      <section id="section-product">
+        <div class="center-container" id="product-container">
+          <div id="product-info">
+            <h2>Aanwezigheidsscanner</h2>
+            <p>
+              Een leerling houdt een kaart of badge voor de scanner en staat als
+              aanwezig geregistreerd. Geen namenlijst en geen wachttijd: de les
+              kan sneller beginnen.
+            </p>
+            <p>
+              Ons prototype maken we met een Circuit Playground Express in een
+              behuizing van lasergesneden multiplex. Een scan-icoon op de
+              voorkant laat zien waar de kaart heen moet.
+            </p>
+            <a class="button" href="product.html">Bekijk de scanner</a>
+          </div>
+
+          <div id="product-photo">
+            <img src="images/product.png" alt="Product Foto" />
+          </div>
         </div>
       </section>
     </main>
 
-    <footer>Trademark</footer>
+    <footer>
+      <div id="footer-trademark">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Lageschool Logo" />
+        </a>
+        <p>© 2026 Lageschool Rotterdam™</p>
+      </div>
+      <div id="footer-links">
+        <a href="">Privacy Policy</a>
+        <a href="">Terms and Conditions</a>
+        <a href="">Cookie Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
   </body>
 </html>
