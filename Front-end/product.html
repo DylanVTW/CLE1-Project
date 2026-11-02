@@ -1,95 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lageschool Rotterdam</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
+  <body>
+    <nav>
+      <a href="index.html"
+        ><img src="images/logo.png" alt="Lageschool Logo"
+      /></a>
+      <div id="nav-links">
+        <a href="bedrijf.html">Bedrijf</a>
+        <a href="product.html" class="current-page">Product</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
 
-<body>
-  <nav>
-    <a href="index.html"><img src="images/logo.png" alt="Logo" /></a>
-    <div id="nav-links">
-      <a href="bedrijf.html">Bedrijf</a>
-      <a href="product.html">Product</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-
-  <header>
-    <h1>Ons Product</h1>
-  </header>
-
-  <main>
-    <section id="product-section">
-      <img id="product-image" src="./images/image.png" alt="Draft foto van product">
-      <div class="center-container">
-        <h2>
-          De aanwezigheidscanner
-        </h2>
-
-        <p>
-          Vind jij het ook zo vervelend als het checken van aanwezigheid zo lang duurt? Wij ook! Daarom hebben we de
-          aanwezigheidscanner ontworpen om dit probleem op te lossen.
-          de scanner maakt het makkelijker voor docenten om de aanwezigheid van leerlingen te controleren. De scanner
-          scant een tag of kaartje van de leerling en registreert automatisch hun aanwezigheid. Dit bespaart tijd en
-          maakt het een stuk makkelijker voor docenten om in een keer de les te starten.
+    <header>
+      <div class="center-container" id="header-container">
+        <h1>Ons product</h1>
+        <p class="intro">
+          Met de aanwezigheidsscanner registreert een leerling zijn aanwezigheid
+          met één scan van een kaart of badge.
         </p>
       </div>
-    </section>
+    </header>
 
+    <main>
+      <section id="section-product-details">
+        <div class="center-container" id="product-container">
+          <div id="product-info">
+            <h2>Aanwezigheidsscanner</h2>
+            <p>
+              Aan het begin van de les kost het controleren van de aanwezigheid
+              tijd. Met onze scanner houdt de leerling een tag of kaartje voor
+              de scanner en staat hij of zij direct als aanwezig geregistreerd.
+              Zo kan de docent meteen met de les beginnen.
+            </p>
+            <p>
+              Het prototype is gebouwd met een Circuit Playground Express in een
+              behuizing van lasergesneden multiplex.
+            </p>
+          </div>
 
-    <section id="instructions-section">
-      <div class="center-container">
-        <h3>Gebruik instructies</h3>
-        <ul>
-          <li>1. Zet de scanner aan.</li>
-          <li>2. Plaats de scanner op de juiste plek naast de deur van het lokaal.</li>
-          <li>3. Pak een tag of kaartje en houd deze voor de scanner.</li>
-          <li>
-           4. Als de scanner de tag goed scant, zal er een groen lichtje branden voor 2 seconden.<br>
-           4.1 Als de scanner de tag niet goed scant, zal er een rood lichtje branden voor 2 seconden.
-          </li>
-        </ul>
+          <div id="product-photo">
+            <img
+              src="images/image.png"
+              alt="Foto van de aanwezigheidsscanner"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="section-instructions">
+        <div class="center-container" id="instructions-container">
+          <h2>Gebruiksinstructies</h2>
+          <ol>
+            <li>Zet de scanner aan.</li>
+            <li>
+              Plaats de scanner op de juiste plek naast de deur van het lokaal.
+            </li>
+            <li>Pak een tag of kaartje en houd deze voor de scanner.</li>
+            <li>
+              Let op het lampje, dat 2 seconden brandt:
+              <ul>
+                <li>Groen: de tag is goed gescand.</li>
+                <li>Rood: de tag is niet goed gescand. Probeer het opnieuw.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="section-components">
+        <div class="center-container" id="components-container">
+          <h2>Onderdelen</h2>
+          <div id="components-list">
+            <div class="component-card">
+              <img src="images/CPX.jpg" alt="Circuit Playground Express" />
+              <p>CPX</p>
+            </div>
+            <div class="component-card">
+              <img src="images/crocklem.jpg" alt="Krokodilklemmen" />
+              <p>Krokodilklemmen</p>
+            </div>
+            <div class="component-card">
+              <img src="images/tag.jpg" alt="Tag" />
+              <p>Tag</p>
+            </div>
+            <div class="component-card">
+              <img src="images/tagreader.jpg" alt="Tagreader" />
+              <p>Tagreader</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div id="footer-trademark">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Lageschool Logo" />
+        </a>
+        <p>© 2026 Lageschool Rotterdam™</p>
       </div>
-    </section>
-
-
-    <section id="components-section">
-      <div class="component-card">
-        <img src="./images/CPX.jpg" alt="CPX foto">
-        <p>CPX</p>
+      <div id="footer-links">
+        <a href="">Privacy Policy</a>
+        <a href="">Terms and Conditions</a>
+        <a href="">Cookie Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
-      <div class="component-card">
-        <img src="./images/crocklem.jpg" alt="Krokodilklem foto">
-        <p>Krokodilklemmen</p>
-      </div>
-      <div class="component-card">
-        <img src="./images/tag.jpg" alt="Tag foto">
-        <p>Tags</p>
-      </div>
-      <div class="component-card">
-        <img src="./images/tagreader.jpg" alt="Tagreader foto">
-        <p>Tagreader</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div id="footer-trademark">
-      <a href="index.html"><img src="images/logo.png" alt="Logo" /></a>
-      <p>© 2026 Lageschool Rotterdam™</p>
-    </div>
-    <div id="footer-links">
-      <a href="">Privacy Policy</a>
-      <a href="">Terms and Conditions</a>
-      <a href="">Cookie Policy</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </footer>
-
-</body>
-
+    </footer>
+  </body>
 </html>
