@@ -1,0 +1,6 @@
+Back-end/.venv/
+Back-end/data/
+__pycache__/
+*.pyc
+node_modules/
+.runtime/
