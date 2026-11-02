@@ -471,6 +471,8 @@ textarea {
     display: flex;
     flex-direction: column;
     gap: var(--small-gap);
+    border: 0;
+    padding: 0;
 }
 
 #form-radio-inputs {
@@ -521,5 +523,29 @@ textarea {
 
     #product-container {
         flex-direction: column;
+    }
+
+    .form-duo {
+        flex-direction: column;
+    }
+
+    #section-about-us {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #section-about-us a {
+        align-self: center;
+    }
+
+    #components-list {
+        flex-direction: column;
+    }
+
+    .component-card img {
+        height: auto;
+        object-fit: contain;
     }
 }
