@@ -2,10 +2,16 @@
 const liveServer = location.port === '5500' && ['127.0.0.1', 'localhost'].includes(location.hostname);
 const api = liveServer ? 'http://127.0.0.1:8080/api/attendance' : '/api/attendance';
 
-// 1. Maak een tabelregel. textContent houdt namen veilig als gewone tekst.
-function addRow(table, values) {
-  const row = table.insertRow();
-  for (const value of values) row.insertCell().textContent = value;
+function maakVak(lijst, teksten) {
+  const vak = document.createElement('div');
+  vak.className = 'gegevens-vak';
+  for (const tekst of teksten) {
+    const alinea = document.createElement('p');
+    alinea.textContent = tekst;
+    vak.appendChild(alinea);
+  }
+  lijst.appendChild(vak);
+  return vak;
 }
 
 function date(value) {
@@ -21,28 +27,35 @@ function status(inside, action = false) {
 
 // 2. Vul de website met de ontvangen personen en scans.
 function show(data) {
-  document.getElementById('connection-dot').classList.toggle('online', data.reader.connected);
-  document.getElementById('connection-title').textContent = data.reader.connected ? 'Reader verbonden' : 'Reader niet verbonden';
-  document.getElementById('connection-message').textContent = data.reader.message;
-  document.getElementById('reader-log').textContent = data.reader.last_line || 'Nog geen uitvoer ontvangen.';
-  const people = document.getElementById('people');
-  const scans = document.getElementById('scans');
+  document.getElementById('verbinding-lampje').classList.toggle('verbonden', data.reader.connected);
+  document.getElementById('verbinding-titel').textContent = data.reader.connected ? 'Reader verbonden' : 'Reader niet verbonden';
+  document.getElementById('verbinding-tekst').textContent = data.reader.message;
+  document.getElementById('scanner-bericht').textContent = data.reader.last_line || 'Nog geen uitvoer ontvangen.';
+  const people = document.getElementById('personenlijst');
+  const scans = document.getElementById('scanlijst');
   people.replaceChildren();
   scans.replaceChildren();
   for (const person of data.people) {
-    addRow(people, [person.name, status(person.inside), date(person.updated_at)]);
-    const cell = people.lastChild.cells[1];
-    cell.className = person.inside === null ? 'unknown' : person.inside ? 'in' : 'out';
+    const vak = maakVak(people, [
+      'Naam: ' + person.name,
+      'Status: ' + status(person.inside),
+      'Laatst bijgewerkt: ' + date(person.updated_at)
+    ]);
+    vak.children[1].className = person.inside === null ? 'onbekend' : person.inside ? 'aanwezig' : 'afwezig';
   }
   for (const scan of data.scans) {
-    addRow(scans, [date(scan.scanned_at), scan.name, status(scan.inside, true)]);
-    scans.lastChild.cells[2].className = scan.inside ? 'in' : 'out';
+    const vak = maakVak(scans, [
+      'Tijdstip: ' + date(scan.scanned_at),
+      'Naam: ' + scan.name,
+      'Actie: ' + status(scan.inside, true)
+    ]);
+    vak.children[2].className = scan.inside ? 'aanwezig' : 'afwezig';
   }
-  if (!data.scans.length) addRow(scans, ['Nog geen scans ontvangen.', '', '']);
-  document.getElementById('count-in').textContent = data.people.filter(p => p.inside === 1).length;
-  document.getElementById('count-out').textContent = data.people.filter(p => p.inside === 0).length;
-  document.getElementById('count-unknown').textContent = data.people.filter(p => p.inside === null).length;
-  document.getElementById('refresh-time').textContent = 'Laatst opgehaald: ' + date(new Date());
+  if (!data.scans.length) maakVak(scans, ['Nog geen scans ontvangen.']);
+  document.getElementById('aantal-aanwezig').textContent = data.people.filter(p => p.inside === 1).length;
+  document.getElementById('aantal-afwezig').textContent = data.people.filter(p => p.inside === 0).length;
+  document.getElementById('aantal-onbekend').textContent = data.people.filter(p => p.inside === null).length;
+  document.getElementById('bijgewerkt-op').textContent = 'Laatst opgehaald: ' + date(new Date());
 }
 
 // 3. Vraag nieuwe gegevens op. Wacht daarna één seconde en herhaal.
@@ -52,10 +65,10 @@ async function refresh() {
     if (!response.ok) throw new Error('Geen gegevens');
     show(await response.json());
   } catch (error) {
-    document.getElementById('connection-dot').classList.remove('online');
-    document.getElementById('connection-title').textContent = 'Websitekoppeling niet bereikbaar';
-    document.getElementById('connection-message').textContent = 'Start de aanwezigheidsserver met Start-aanwezigheid.cmd. Eerder getoonde gegevens kunnen verouderd zijn.';
-    document.getElementById('refresh-time').textContent = 'Geen actuele verbinding — getoonde gegevens kunnen verouderd zijn.';
+    document.getElementById('verbinding-lampje').classList.remove('verbonden');
+    document.getElementById('verbinding-titel').textContent = 'Websitekoppeling niet bereikbaar';
+    document.getElementById('verbinding-tekst').textContent = 'Start de aanwezigheidsserver met Start-aanwezigheid.cmd. Eerder getoonde gegevens kunnen verouderd zijn.';
+    document.getElementById('bijgewerkt-op').textContent = 'Geen actuele verbinding — getoonde gegevens kunnen verouderd zijn.';
   } finally {
     setTimeout(refresh, 1000);
   }
