@@ -1,7 +1,8 @@
 /* default */
 * {
     margin: 0;
-    font-family: 'Comic Sans MS';
+    /* font-family: 'Comic Sans MS'; */
+    font-family: 'Arial', sans-serif;
     box-sizing: border-box;
 }
 
