@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lageschool Rotterdam</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+  </head>
+
+  <body>
+    <nav>
+      <a href="index.html"
+        ><img src="images/logo.png" alt="Lageschool Logo"
+      /></a>
+      <div id="nav-links">
+        <a href="bedrijf.html">Bedrijf</a>
+        <a href="product.html">Product</a>
+        <a href="contact.html">Contact</a>
+        <a href="aanwezigheid.html" class="current-page">Aanwezigheid</a>
+      </div>
+    </nav>
+
+    <header>
+      <div class="center-container" id="header-container">
+        <h1>Aanwezigheid vandaag</h1>
+        <p class="intro">
+          Scan je tag om in of uit te checken. De lijst wordt automatisch
+          bijgewerkt.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section id="section-connection">
+        <div class="center-container" id="connection-container">
+          <div id="connection-led" class="led"></div>
+          <div id="connection-info">
+            <h2 id="connection-title">Verbinding controleren…</h2>
+            <p id="connection-text" role="status">Even geduld.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="section-counters">
+        <div class="center-container" id="counters-container">
+          <div class="counter-card">
+            <p id="present-count" class="count">—</p>
+            <p>Aanwezig</p>
+          </div>
+          <div class="counter-card">
+            <p id="absent-count" class="count">—</p>
+            <p>Afwezig</p>
+          </div>
+          <div class="counter-card">
+            <p id="unknown-count" class="count">—</p>
+            <p>Status onbekend</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="section-attendance">
+        <div class="center-container" id="attendance-container">
+          <h2>Aanwezigheid</h2>
+          <p id="updated-at">Nog niet bijgewerkt</p>
+          <div id="people-list"></div>
+        </div>
+      </section>
+
+      <section id="section-scans">
+        <div class="center-container" id="scans-container">
+          <h2>Recente scans</h2>
+          <p>De laatste 100 scans. Het tijdstip komt van deze laptop.</p>
+          <div id="scan-list"></div>
+        </div>
+      </section>
+
+      <section id="section-scanner-info">
+        <div class="center-container" id="scanner-info-container">
+          <h2>Scannerinformatie</h2>
+          <p>Sluit de scanner aan via USB en sluit de seriële console in Mu.</p>
+          <p>De gegevens worden op deze laptop opgeslagen.</p>
+          <p id="scanner-message"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div id="footer-trademark">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Lageschool Logo" />
+        </a>
+        <p>© 2026 Lageschool Rotterdam™</p>
+      </div>
+      <div id="footer-links">
+        <a href="">Privacy Policy</a>
+        <a href="">Terms and Conditions</a>
+        <a href="">Cookie Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <script src="js/aanwezigheid.js" defer></script>
+  </body>
+</html>
