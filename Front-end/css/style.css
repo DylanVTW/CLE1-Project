@@ -632,6 +632,10 @@ textarea {
         align-items: center;
     }
 
+    .team-member {
+        gap: var(--default-gap);
+    }
+
     #company-container {
         flex-direction: column;
     }
@@ -642,21 +646,6 @@ textarea {
 
     .form-duo {
         flex-direction: column;
-    }
-
-    #counters-container {
-        flex-direction: column;
-    }
-
-    #section-about-us {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    #section-about-us a {
-        align-self: center;
     }
 
     #components-list {
